@@ -1,0 +1,9 @@
+@font-face {
+    font-family: theAniruth;
+    src: url("../fonts/theAniruth.ttf") format('truetype');
+}
+
+p{
+    font-family: theAniruth;
+    color: blue;
+}
