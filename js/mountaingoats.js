@@ -36,24 +36,18 @@ function create() {
     ledge.body.immovable = true;
     ledge = platforms.create(-150, 250, 'ground');
     ledge.body.immovable = true;
-
     // The player and its settings
     player = game.add.sprite(32, game.world.height - 150, 'dude');
-
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
-
     //  Player physics properties. Give the little guy a slight bounce.
     player.body.bounce.y = 0.2;
     player.body.gravity.y = 300;
     player.body.collideWorldBounds = true;
-
     //  Our two animations, walking left and right.
     player.animations.add('left', [0, 1, 2, 3], 10, true);
     player.animations.add('right', [5, 6, 7, 8], 10, true);
-
-
-     //  Finally some stars to collect
+    //  Finally some stars to collect
     stars = game.add.group();
     //  We will enable physics for any star that is created in this group
     stars.enableBody = true;
@@ -67,9 +61,6 @@ function create() {
         //  This just gives each star a slightly random bounce value
         star.body.bounce.y = 0.7 + Math.random() * 0.2;
     }
-    //  Our controls.
-    cursors = game.input.keyboard.createCursorKeys();
-
     //  The score
     scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
     //  Our controls.
@@ -115,4 +106,8 @@ function collectStar (player, star) {
     
     // Removes the star from the screen
     star.kill();
+
+    //  Add and update the score
+    score += 10;
+    scoreText.text = 'Score: ' + score;
 }
