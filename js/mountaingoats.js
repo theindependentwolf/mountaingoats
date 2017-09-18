@@ -1,21 +1,17 @@
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 function preload() {
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
     game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
 }
-
-
 var player;
 var platforms;
 var cursors;
 var stars;
 var score = 0;
 var scoreText;
-
-
 function create() {
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -67,12 +63,12 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
     
 }
-
 function update() {
-	//  Collide the player and the stars with the platforms
-    game.physics.arcade.collide(player, platforms);
-
-
+    //  Collide the player and the stars with the platforms
+    var hitPlatform = game.physics.arcade.collide(player, platforms);
+    game.physics.arcade.collide(stars, platforms);
+    //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
+    game.physics.arcade.overlap(player, stars, collectStar, null, this);
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
     if (cursors.left.isDown)
@@ -95,18 +91,15 @@ function update() {
     }
     
     //  Allow the player to jump if they are touching the ground.
-    if (cursors.up.isDown && player.body.touching.down)
+    if (cursors.up.isDown && player.body.touching.down && hitPlatform)
     {
         player.body.velocity.y = -350;
     }
 }
-
-
 function collectStar (player, star) {
     
     // Removes the star from the screen
     star.kill();
-
     //  Add and update the score
     score += 10;
     scoreText.text = 'Score: ' + score;
