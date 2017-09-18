@@ -63,6 +63,8 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
     
 }
+
+
 function update() {
     //  Collide the player and the stars with the platforms
     var hitPlatform = game.physics.arcade.collide(player, platforms);
@@ -96,6 +98,8 @@ function update() {
         player.body.velocity.y = -350;
     }
 }
+
+
 function collectStar (player, star) {
     
     // Removes the star from the screen
