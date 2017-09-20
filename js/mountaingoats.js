@@ -22,6 +22,7 @@ function preload() {
 function create() {
     var preloadImage = game.add.sprite(0, 0, 'billyGoat');
     preloadImage.rotation = 0.14;
+    sprite.events.onInputDown.add(destroySprite(preloadImage));
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
     //  A simple background for our game
@@ -108,6 +109,10 @@ function update() {
     }
 }
 
+
+function destroy(sprite){
+    sprite.destroy();
+}
 
 function collectStar (player, star) {
     
