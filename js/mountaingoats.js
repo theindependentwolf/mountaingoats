@@ -12,7 +12,16 @@ var cursors;
 var stars;
 var score = 0;
 var scoreText;
+
+
+function preload() {
+    //preload image
+    game.load.image('billyGoat', 'assets/pics/billyGoat.jpg');
+}
+
 function create() {
+    var preloadImage = game.add.sprite(0, 0, 'billyGoat');
+    preloadImage.rotation = 0.14;
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
     //  A simple background for our game
