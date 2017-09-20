@@ -109,7 +109,7 @@ function update() {
 }
 
 
-function destroy(sprite){
+function destroySprite(sprite){
     sprite.destroy();
 }
 
