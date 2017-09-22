@@ -16,12 +16,9 @@ var scoreText;
 
 function preload() {
     //preload image
-    game.load.image('billyGoat', 'assets/pics/billyGoat.jpg');
 }
 
 function create() {
-    var preloadImage = game.add.sprite(0, 0, 'billyGoat');
-    preloadImage.events.onInputDown.add(destroySprite, this);
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
     //  A simple background for our game
