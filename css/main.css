@@ -7,3 +7,12 @@ p{
     font-family: theAniruth;
     color: red;
 }
+
+#factDiv{
+	height: 50px;
+	margin: 20px;
+}
+
+#factTab{
+	text-align: center;
+}

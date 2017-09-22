@@ -4,10 +4,7 @@
         <title>Mountain Goats</title>
 
         <link rel="stylesheet" type="text/css" href="css/main.css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="js/mountaingoats.js"></script> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     </head>
 
     <body>
@@ -15,58 +12,44 @@
           <h2>Mountain Goats</h2>
           <ul class="nav nav-pills">
             <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
-            <li><a data-toggle="pill" href="#menu1">Game</a></li>
-            <li><a data-toggle="pill" href="#menu2">Facts</a></li>
-            <li><a data-toggle="pill" href="#menu3">Gallery</a></li>
+            <li><a data-toggle="pill" href="#gameTab">Game</a></li>
+            <li><a data-toggle="pill" href="#factTab">Facts</a></li>
+            <li><a data-toggle="pill" href="#picTab">Gallery</a></li>
           </ul>
           
           <div class="tab-content">
+
+            <!-- Home Tab -->
             <div id="home" class="tab-pane fade in active">
               <h3>HOME</h3>
               <p>Mountain goats are GOAT.</p>
             </div>
-            <div id="menu1" class="tab-pane fade">
+            
+            <!-- Links to Mountain Goat game-->
+            <div id="gameTab" class="tab-pane fade">
               <h3>Mountain Goats</h3>
               <p>A game made using HTML5 and JS with the help of Phaser Framework.</p>              
               <button type="button" class="btn btn-success"><a href="mountaingoats.html">Go to Game</a></button>
             </div>
-            <div id="menu2" class="tab-pane fade">
-              <h3>Mountain Goat Facts</h3>
-              <p>The mountain goat’s scientific name is oreamnos americanus.
-Mountain goats are not goats. They are more related to antelope and are part of the bovidae family.
-These mammals are herbivores and eat grasses, herbs, sedges, ferns, mosses, lichens, twigs, leaves, and such.
-They weigh 100 to 300 pounds.
-Mountain goats have a recognizable wooly beard that is an extension of its throat mane.
-mountain goats | Pixabay
 
-Both male and females have sharp, pointed horns that range from 9 to 12 inches.
-Mountain goats are equipped with hard hooves and flexible pads for traction on rocky cliffs.
-Males are about 3.5 feet tall and 5.5 feet long.
-Mountain goats range from Alaska through Canada to the US Rocky Mountains.
-Mountain goats can jump 12 feet in one leap.
-Mountain goats live in alpine and subalpine environments
-They are the largest mammal in high altitude environments.
-A mountain goats’ white coat has a double layer that sheds in the summer and provides warmth in the winter.
-There are approximately 100,000 mountain goats in North America.
-Males are called billies. Females are called nannies. Babies are called kids.
-Nannies give birth to one, maybe two, kids each spring.
-Females live in bands or herds with kids. Males live in groups of 2 to 3.
-After about 22 months, you can tell the age of a mountain goat by counting the rings on their horns.
-Mating season is November/December. Gestation is 150-180 days.
-Mountain goats usually live 9 to 15 years.
-Mountain goats eat cud that they eat, regurgitate, and eat again.
-Mountain goats can be hunted in Montana from September to November according to Montana Fish, Wildlife, and Parks.
-Goat meat is called chevon or cabrito.
-Mountain goats can become aggressive and protective of their space and food sources.
-Mountain goats were reintroduced to Montana during the 1940’s.
-There are roughly 208 mountain goats in and around Yellowstone National Park</p>
+            <!-- Mountain Goat facts generator -->
+            <div id="factTab" class="tab-pane fade">                     
+              <div class="container">
+                <p id="factDiv">"Click the Generate fact button to get Mountain Goat Facts"</p>
+                <button id="genFactBtn" onclick="generateFact()">Generate Fact</button>
+              </div>
             </div>
-            <div id="menu3" class="tab-pane fade">
-              <h3>Menu 3</h3>
-              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+            <!-- Mountain Goat Gallery -->
+            <div id="picTab" class="tab-pane fade">
+              <h3>Mountain Goat Pictures</h3>
+              <p>None of the pictures are mine and I don't intend to make any money with this website.</p>
             </div>
           </div>
-        </div>
 
+        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/facts.js"></script> 
     </body>
 </html>
